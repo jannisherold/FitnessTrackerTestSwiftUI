@@ -24,6 +24,11 @@ struct WorkoutDetailView: View {
                 .font(.system(size: 25, weight: .semibold))
                 .padding(.vertical, 3)
                 .lineLimit(1)
+            
+            Text("Git Test")
+                .font(.system(size: 25, weight: .semibold))
+                .padding(.vertical, 3)
+                .lineLimit(1)
         }
         
         
