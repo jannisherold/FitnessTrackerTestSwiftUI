@@ -10,21 +10,35 @@ import SwiftUI
 struct WorkoutDetailView: View {
     
     var workout: Workout
+    //var currentWorkoutExercises: [Exercise]
     
     var body: some View {
         
         VStack{
             
-            Text(workout.workoutName)
-                .font(.system(size: 40, weight: .bold))
-                .padding(.vertical, 3)
-                .lineLimit(1)
+            HStack{
+                Text(workout.workoutName)
+                    .font(.system(size: 45, weight: .bold))
+                    .padding(.leading, 20)
+                    .lineLimit(1)
+                    
+                Spacer()
+            }
             
-            Text(workout.exercises.first!.exerciseName)
-                .font(.system(size: 25, weight: .semibold))
-                .padding(.vertical, 3)
-                .lineLimit(1)
+        
+            HStack{
+                
+                Text(workout.exercises.first!.exerciseName)
+                    .font(.system(size: 25, weight: .semibold))
+                    .padding(.leading, 20)
+                    .lineLimit(1)
+                
+                Spacer()
+                
+            }
             
+            
+            Spacer()
             
         }
         
