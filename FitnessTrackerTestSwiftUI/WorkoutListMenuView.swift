@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct WorkoutListMenuView: View {
+    
+    //Workout Liste, die Dummy-Werte der WorkoutList Klasse übergeben bekommen
     var workouts: [Workout] = WorkoutList.pushPull
+    
     var body: some View {
         
         NavigationView{
@@ -16,6 +19,8 @@ struct WorkoutListMenuView: View {
             List(workouts, id: \.id){ workout in
                 
                 NavigationLink(destination: WorkoutDetailView(workout: workout), label: {
+                    
+                    //Text ist jeweils der String, der in der Workouts Listen-Zeile ausgespielt wird
                     Text(workout.workoutName)
                         .font(.system(size: 30, weight: .bold))
                         .padding(.vertical, 3)
@@ -28,15 +33,6 @@ struct WorkoutListMenuView: View {
             
             
             /*
-             VStack{
-             
-             /*HStack{
-              Title(titleName: "Workouts")
-              .padding(.leading, 20)
-              Spacer()
-              }*/
-             
-             Spacer()
              
              Button{
              print ("workout hinzufügen tapped")
@@ -48,59 +44,13 @@ struct WorkoutListMenuView: View {
              .font(.system(size: 20, weight: .bold, design: .default))
              .cornerRadius(10)
              }
-             }
+             
              */
         }
     }
 }
 
 
-
-
-
-
-
-
-
 #Preview {
     WorkoutListMenuView()
-}
-
-
-struct BackgroundView: View {
-    
-    var body: some View {
-        LinearGradient(gradient: Gradient(
-            colors: [.white, .white]),
-                       startPoint: .topLeading,
-                       endPoint: .bottomTrailing)
-        //damit ganzer Screen vom Verlauf benutzt wird
-        .edgesIgnoringSafeArea(.all)
-    }
-}
-
-
-struct Title: View {
-    
-    var titleName: String
-    
-    var body: some View{
-        Text(titleName)
-            .font(.system(size: 40, weight: .bold, design: .default))
-            .foregroundColor(.black)
-            .padding(.top)
-    }
-}
-
-struct WorkoutTitle: View {
-    
-    var workoutTitleName: String
-    
-    var body: some View{
-        Text(workoutTitleName)
-            .font(.system(size: 30, weight: .bold, design: .default))
-            .foregroundColor(.black)
-            .lineLimit(1)
-            .minimumScaleFactor(0.5)
-    }
 }

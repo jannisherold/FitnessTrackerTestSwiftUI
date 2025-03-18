@@ -20,18 +20,13 @@ struct WorkoutDetailView: View {
                 .padding(.vertical, 3)
                 .lineLimit(1)
             
-            Text("Übung")
+            Text(workout.exercises.first!.exerciseName)
                 .font(.system(size: 25, weight: .semibold))
                 .padding(.vertical, 3)
                 .lineLimit(1)
             
-            Text("Git Test")
-                .font(.system(size: 25, weight: .semibold))
-                .padding(.vertical, 3)
-                .lineLimit(1)
+            
         }
-        
-        
         
     }
 }
